@@ -9,11 +9,13 @@ import indexRouter from './router/index.router.js';
 const app = express();
 const PORT = process.env.PORT || 8000 ;
 
+//middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(morgan('dev'))
 app.use(cors());
 
+//router
 app.use('/api', indexRouter );
 
 
