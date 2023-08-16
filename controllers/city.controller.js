@@ -76,9 +76,40 @@ const controller = {
             })
         }
     },
-    readCities: (req, res)=>{},
-    updateCities: (req, res)=>{},
-    deleteCities: (req, res)=>{}
+    updateCities: async (req, res)=>{
+
+        try {
+            await City.updateOne({_id: req.params.id}, req.body)
+
+            return res.status(200).json({
+                success: true,
+                message: 'City updated successfully'
+            })
+
+        } catch (error) {
+            return res.status(500).json({
+            success: false,
+            message: "Cannot update city"
+            })
+        }
+    },
+    deleteCities: async (req, res)=>{
+
+        try {
+            await City.deleteOne({_id: req.params.id})
+
+            return res.status(200).json({
+                success: true,
+                message: 'City deleted successfully'
+            })
+
+        } catch (error) {
+            return res.status(500).json({
+            success: false,
+            message: "Cannot delete city"
+            })
+        }
+    },
 }
 
 export default controller;

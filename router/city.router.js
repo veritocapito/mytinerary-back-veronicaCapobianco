@@ -15,7 +15,7 @@ router.post('/', createCities )
     //mongoose .find() .findOne() .findById()
 
 router.put('/:id', updateCities )
-    //mongoose .findByIdAndUpdate()
+    //mongoose .findByIdAndUpdate() .updateOne()
 
 router.delete('/:id', deleteCities )
     //mongoose .findByIdAndDelete()
