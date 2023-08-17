@@ -6,6 +6,7 @@ const schema = new Schema({
     city: {type:String, required:true},
     country: {type:String, required:true},
     image: {type:String, required:true},
+    description: {type:String, required:true},
     created_by_user: {type:Types.ObjectId, ref:'users'},
 },{
     timestamps: true,
